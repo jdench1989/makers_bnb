@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MakersBnB</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-expand">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="/static/logo-nav.png" alt="Maker's logo" class="d-inline-block align-text-top">
+                    MakersB&B
+                </a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item"><div><a class="nav-link" name="home" href="/">Home</a></div></li>
+                    <li class="nav-item"><div><a class="nav-link" name="signout" href="/signout">Sign Out</a></div></li>
+                </ul>
+            </div>
+        </nav>
+        <header class="py-3 mb-4 border-bottom">
+            <div class="container text-center">
+                <h1>Makers B&B</h1>
+                <h2>Welcome {{user_name}}!</h2>
+            </div>
+        </header>
+        <div class="container text-center">
+            <button class="btn btn-primary" type="button" onclick="window.location.href = '/list_space';">List a space</button>
+            <button class="btn btn-primary" type="button" href="/book_space">Book a space</button>
+        </div>
+        <br>
+        <h3> Your Listed Spaces</h3>
+        <div class="table-div">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Listing Name</th>
+                        <th>Description</th>
+                        <th>cost per night(£)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for listing in listings %}
+                    <tr>
+                        <td>{{listing.name}}</td>
+                        <td>{{listing.description}}</td>
+                        <td>{{listing.cost}}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>   
+        </div>
+    </body>
+</html>

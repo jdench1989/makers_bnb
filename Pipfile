@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pytest = "*"
+psycopg = {extras = ["pool", "binary"], version = "*"}
+psycopg2-binary = "*"
+flask = "*"
+pytest-playwright = "*"
+pytest-xprocess = "*"
+py = "*"
+python-dotenv = "*"
+
+[dev-packages]
+autopep8 = "*"
+
+[requires]
+python_version = "3.11"

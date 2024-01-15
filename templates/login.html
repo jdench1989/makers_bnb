@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MakersBnB</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-expand">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="/static/logo-nav.png" alt="Maker's logo" class="d-inline-block align-text-top">
+                    MakersB&B
+                </a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><div><a class="nav-link" name="home" href="/" class="nav-link ">Home</a></div></li>
+                </ul>
+            </div>
+        </nav>
+        <header class="py-3 mb-4 border-bottom">
+            <div class="container text-center">
+                <h1>Log in to Makers B&B</h1>
+            </div>
+        </header>
+        <div class="container text-center">
+            {% if valid_password == False %}
+            <p style="color:red;">
+                Username or password is incorrect!
+            </p>
+            {% endif %}
+        </div>
+
+        <div class="container">
+            <div>
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <br>
+                        <input type="text" class="form-control" name="email" id="email">
+                        <br>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <br>
+                        <input type="password" class="form-control" name="password" id="password">
+                    </div>
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Log In">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
